@@ -1,10 +1,12 @@
-import express from "express";
 import bodyParser from "body-parser";
-import mongoose from "mongoose";
 import cors from "cors";
 import dotenv from "dotenv";
+import express from "express";
 import helmet from "helmet";
+import mongoose from "mongoose";
 import morgan from "morgan";
+import { kpis } from "./data/data.js";
+import KPI from "./models/KPI.js";
 import kpiRoutes from "./routes/kpi.js";
 
 //  CONFIGURATIONS
@@ -28,5 +30,6 @@ mongoose
     app.listen(PORT, () => console.log(`Server port: ${PORT}`));
 
     await mongoose.connection.db.dropDatabase();
+    KPI.insertMany(kpis);
   })
   .catch((error) => console.log(error));
