@@ -1,5 +1,5 @@
 import express from "express";
-import KPI from "../models/KPI";
+import KPI from "../models/KPI.js";
 
 const router = express.Router();
 
@@ -11,4 +11,4 @@ router.get("/kpis", async (req, res) => {
   }
 });
 
-export default kpiRoutes;
+export default router;
