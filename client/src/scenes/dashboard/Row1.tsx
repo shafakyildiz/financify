@@ -3,6 +3,7 @@ import { useGetKpisQuery } from "@/state/api";
 
 const Row1 = () => {
   const { data } = useGetKpisQuery();
+  console.log("🚀 ~ Row1 ~ data:", data);
 
   return (
     <>
