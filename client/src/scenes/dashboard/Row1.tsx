@@ -1,5 +1,7 @@
 import DashboardBox from "@/components/DashboardBox";
 import { useGetKpisQuery } from "@/state/api";
+import { useTheme } from "@emotion/react";
+import { useMemo } from "react";
 import {
   Area,
   AreaChart,
@@ -11,6 +13,8 @@ import {
 
 const Row1 = () => {
   const { data } = useGetKpisQuery();
+  const { palette } = useTheme();
+
   console.log("🚀 ~ Row1 ~ data:", data);
   const revenueExpenses = useMemo(() => {
     return (
@@ -24,50 +28,51 @@ const Row1 = () => {
       })
     );
   }, [data]);
-  const data = [
-    {
-      name: "Page A",
-      uv: 4000,
-      pv: 2400,
-      amt: 2400,
-    },
-    {
-      name: "Page B",
-      uv: 3000,
-      pv: 1398,
-      amt: 2210,
-    },
-    {
-      name: "Page C",
-      uv: 2000,
-      pv: 9800,
-      amt: 2290,
-    },
-    {
-      name: "Page D",
-      uv: 2780,
-      pv: 3908,
-      amt: 2000,
-    },
-    {
-      name: "Page E",
-      uv: 1890,
-      pv: 4800,
-      amt: 2181,
-    },
-    {
-      name: "Page F",
-      uv: 2390,
-      pv: 3800,
-      amt: 2500,
-    },
-    {
-      name: "Page G",
-      uv: 3490,
-      pv: 4300,
-      amt: 2100,
-    },
-  ];
+
+  // const data = [
+  //   {
+  //     name: "Page A",
+  //     uv: 4000,
+  //     pv: 2400,
+  //     amt: 2400,
+  //   },
+  //   {
+  //     name: "Page B",
+  //     uv: 3000,
+  //     pv: 1398,
+  //     amt: 2210,
+  //   },
+  //   {
+  //     name: "Page C",
+  //     uv: 2000,
+  //     pv: 9800,
+  //     amt: 2290,
+  //   },
+  //   {
+  //     name: "Page D",
+  //     uv: 2780,
+  //     pv: 3908,
+  //     amt: 2000,
+  //   },
+  //   {
+  //     name: "Page E",
+  //     uv: 1890,
+  //     pv: 4800,
+  //     amt: 2181,
+  //   },
+  //   {
+  //     name: "Page F",
+  //     uv: 2390,
+  //     pv: 3800,
+  //     amt: 2500,
+  //   },
+  //   {
+  //     name: "Page G",
+  //     uv: 3490,
+  //     pv: 4300,
+  //     amt: 2100,
+  //   },
+  // ];
 
   return (
     <>
@@ -75,7 +80,7 @@ const Row1 = () => {
         <AreaChart
           width={730}
           height={250}
-          data={data}
+          data={revenueExpenses}
           margin={{ top: 10, right: 30, left: 0, bottom: 0 }}
         >
           <defs>
@@ -94,17 +99,10 @@ const Row1 = () => {
           <Tooltip />
           <Area
             type="monotone"
-            dataKey="uv"
-            stroke="#8884d8"
+            dataKey="revenue"
+            stroke={palette.primary.main}
             fillOpacity={1}
-            fill="url(#colorUv)"
-          />
-          <Area
-            type="monotone"
-            dataKey="pv"
-            stroke="#82ca9d"
-            fillOpacity={1}
-            fill="url(#colorPv)"
+            fill="url(#colorRevenue)"
           />
         </AreaChart>
       </DashboardBox>
