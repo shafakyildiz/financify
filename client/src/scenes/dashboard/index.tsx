@@ -9,17 +9,18 @@ const gridTemplateLargeScreens = `
   "a b c"
   "a b f"
   "d e f"
+  "d e f"
   "d h i"
   "g h i"
   "g h j"
   "g h j"
 `;
-
 const gridTemplateSmallScreens = `
   "a"
   "a"
   "a"
   "a"
+  "b"
   "b"
   "b"
   "b"
@@ -48,8 +49,7 @@ const gridTemplateSmallScreens = `
 `;
 
 const Dashboard = () => {
-  const isAboveMediumScreen = useMediaQuery("(min-width: 1200px)");
-
+  const isAboveMediumScreens = useMediaQuery("(min-width: 1200px)");
   return (
     <Box
       width="100%"
@@ -57,16 +57,16 @@ const Dashboard = () => {
       display="grid"
       gap="1.5rem"
       sx={
-        isAboveMediumScreen
+        isAboveMediumScreens
           ? {
               gridTemplateColumns: "repeat(3, minmax(370px, 1fr))",
               gridTemplateRows: "repeat(10, minmax(60px, 1fr))",
               gridTemplateAreas: gridTemplateLargeScreens,
             }
           : {
-              gridTemplateAreas: gridTemplateSmallScreens,
               gridAutoColumns: "1fr",
               gridAutoRows: "80px",
+              gridTemplateAreas: gridTemplateSmallScreens,
             }
       }
     >
