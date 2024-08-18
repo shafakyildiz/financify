@@ -41,8 +41,8 @@ const Row1 = () => {
       data[0].monthlyData.map(({ month, revenue, expenses }) => {
         return {
           name: month.substring(0, 3),
-          revenue,
-          profit: (revenue - expenses).toFixed(2),
+          Revenue: revenue,
+          Profit: (revenue - expenses).toFixed(2),
         };
       })
     );
@@ -180,13 +180,13 @@ const Row1 = () => {
             <Line
               yAxisId="left"
               type="monotone"
-              dataKey="profit"
+              dataKey="Profit"
               stroke={palette.tertiary[500]}
             />
             <Line
               yAxisId="right"
               type="monotone"
-              dataKey="revenue"
+              dataKey="Revenue"
               stroke={palette.primary.main}
             />
           </LineChart>
