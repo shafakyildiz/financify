@@ -35,7 +35,6 @@ const Predictions = () => {
     );
 
     const regressionLine = regression.linear(formatted);
-    console.log("🚀 ~ formattedData ~ regressionLine:", regressionLine);
 
     return monthData.map(({ month, revenue }, i: number) => {
       return {
