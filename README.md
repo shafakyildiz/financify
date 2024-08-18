@@ -8,4 +8,5 @@ https://financify-zeta.vercel.app/
   ![image](https://github.com/user-attachments/assets/fac277d9-a2ba-4a7b-aad2-a87368de729f)
 
 - Predictions page:
-  ![image](https://github.com/user-attachments/assets/a3b8ae65-5730-4506-a3d8-30d8f34f7630)
+![image](https://github.com/user-attachments/assets/cbc36ca7-276f-437f-a812-203a2f1b8545)
+
