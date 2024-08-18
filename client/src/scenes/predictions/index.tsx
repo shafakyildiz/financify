@@ -108,7 +108,7 @@ const Predictions = () => {
               value="Revenue in USD"
               offset={-5}
               angle={-90}
-              position="center"
+              position="insideLeft"
             />
           </YAxis>
 
