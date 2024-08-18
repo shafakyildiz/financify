@@ -1,6 +1,4 @@
-- The application shows different type of charts which one may need in finance applications. Moreover it makes future predictions using linear regression. In this way, in the predictions page one may see the revenues for the next year.
-
-- Built with MERN Stack and deployed.
+##### The application shows different type of charts which one may need in finance applications. Moreover it makes future predictions using linear regression. In this way, in the predictions page one may see the revenues for the next year. Built with MERN Stack and deployed.
 
 To visit the demo follow the link below:
 
